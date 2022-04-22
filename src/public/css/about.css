@@ -1,0 +1,16 @@
+.containerAbout {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 100px auto;
+    width: 90%;
+    padding: 10px;
+}
+.containerAbout img{
+    float: right;
+    width: 40% ;
+    padding: 10px;
+}
+.containerAbout p {
+    text-align: justify;
+    margin: 10px;
+}

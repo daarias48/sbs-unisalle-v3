@@ -1,0 +1,92 @@
+<div class="dash_title">
+    <h2 class="sensor-title"><b>Sensor Clarity 2</b></h2>
+    <div>
+        <div>
+            Última medición:
+        </div>
+
+        <div id="dateClarity">-
+        </div>
+
+        <div id="hourClarity">-</div>
+
+    </div>
+
+</div>
+
+<div class="Data_Download">
+    <div class="graph_and_data">
+        <div class="data">
+            <div class="data_data1">
+                <h6>PM<sub>1</sub></h6>
+                <h6 id="pm1massClarity">-</h6>
+            </div>
+            <div class="data_data1">
+                <h6>PM<sub>2.5</sub></h6>
+                <h6 id="pm25massClarity">-</h6>
+            </div>
+            <div class="data_data1">
+                <h6>PM<sub>10</sub></h6>
+                <h6 id="pm10massClarity">-</h6>
+            </div>
+
+            <div class="data_data1">
+                <h6>NO<sub>2</sub></h6>
+                <h6 id="no2Clarity">-</h6>
+            </div>
+
+            
+        </div>
+
+        <div class="graph">
+            <div class="comBox-container">
+                <select name="measures" class="select-measures">
+                    <option selected>Escoja una opción</option>
+                    <option value="0">PM <sub>1</sub> </option>
+                    <option value="1">PM <sub>2.5</sub> </option>
+                    <option value="2">PM <sub>10</sub> </option>
+                    <option value="3">NO <sub>2</sub> concentrado </option>
+                    <option value="4">Temperatura interna</option>
+                    <option value="5">RH interna</option>
+                </select>
+            </div>
+            <canvas id="myChartModulair" style="max-height:fit-content;"></canvas>
+        </div>
+    </div>
+
+    <div class="sensorsInfo">
+        <div class="sensorsInfo_Sensor">
+            <h6><b>Información del sensor</b></h6>
+            <div><b id="temperatureClarity">-</b></div>
+            <div class="sensors_data1">Temperatura interna actual</div>
+
+            <div><b id="rhClarity">-</b></div>
+            <div class="sensors_data1">Humedad relativa interna actual</div>
+
+            <div><b id="idClarity">-</b></div>
+            <div class="sensors_data1">ID dispositivo</div>
+
+            <div><b id="maker">-</b></div>
+            <div class="sensors_data1">Fabricante</div>
+
+            <div><b id="modelClarity">-</b></div>
+            <div class="sensors_data1">Modelo</div>
+
+            <div><b id="comunication">-</b></div>
+            <div class="sensors_data1">Comunicación</div>
+        </div>
+
+        <div class="divForm" >
+            <h6><b>Reporte de mediciones</b></h6>
+            <form id="formExport" >
+                <h6>Seleccione la fecha inicial desde donde quiere descargar los datos</h6>
+                <input type="date" name="date1" id="date1" required>
+                <input type="submit" id="btnExport" value="Exportar datos" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js" integrity="sha512-ZfFfcp0ll1jVjeG5e7uPH1hwUyeoBUVAb3xRJpqBsH90jVegaYKv5nGOhGnUYxZg/kbYpl6EWVGvmWrbV32L9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script type="module" src="/js/clarity2.js"></script>

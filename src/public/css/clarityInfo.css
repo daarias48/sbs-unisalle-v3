@@ -1,0 +1,30 @@
+.clarityData {
+    margin: 100px 0;
+}
+
+.comBox-container {   
+    margin: 10px;
+}
+.p-dates-clarity {
+    text-align: right;
+    margin: 10px;
+    color: #000;
+}
+.p-hour {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: #000;
+    text-align: center;
+}
+.select-measuresClarity {
+    border-radius: 10px;
+    padding: 5px;
+}
+.container-table{
+    background-color: #012a58bb;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #999;
+}
+.theadClarity {
+    background-color: #fff;
+}

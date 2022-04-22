@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card  text-center">
+      <div class="card-header login-card-header">
+        <div class="container-img-login">
+          <img src="/imgs/climauls-login.png" alt="Climauls">
+        </div>
+        <h3>Climauls</h3>
+      </div>
+      <div class="card-body">
+        <h1>Registrar cuenta</h1>
+        <form action="/signup" method="post">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nombre" name="name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" name="email" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Contraseña" name="password" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Confirmar contraseña" name="confirmPassword" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" class="form-control" placeholder="Teléfono: 3129871234" name="phone" pattern="[0-9]{10}" required>
+          </div>
+          <div class="form-group "><button type="submit" class="btn btn-primary d-block" style="margin: 0 auto;">Registrar</button></div>
+          <span>¿Ya tienes una cuenta? <a href="/login">Ingresa aquí</a></span>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

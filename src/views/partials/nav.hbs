@@ -1,0 +1,72 @@
+{{#if user}}
+  
+  <nav class="navbar navbar-expand-lg navbar-light fixedNav mainheader">
+  <div class="container">
+    <div class="logo-salle">
+      <img src="/imgs/logo.png" class="img-logo" alt="La Salle">
+      <img src="/imgs/logo-eco1.png" class="img-logo" alt="Ecopetrol">
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto ul-nav ul">
+        <li class="nav-item li">
+          <a class="nav-link active" href="/index">Aire Ciudadano <i class="fas fa-home"></i></a>
+        </li>
+        <li class="nav-item li">
+          <a class="nav-link active" href="/info">Sensores</a>
+          <ul>
+            <li><a href="/airlink"><font color="#000">Airlink</font></a></li>
+            <li><a href="/clarity"><font color="#000">Clarity 1</font></a></li>
+            <li><a href="/clarity2"><font color="#000">Clarity 2</font></a></li>
+            <li><a href="/eva"><font color="#000">Eva 1</font></a></li>
+            <li><a href="/eva2"><font color="#000">Eva 2</font></a></li>
+            <li><a href="/modulair-pm"><font color="#000">ModulAir 1</font></a></li>
+            <li><a href="/modulair-pm2"><font color="#000">ModulAir 2</font></a></li>
+            <li><a href="/nuboair"><font color="#000">NuboAir</font></a></li>
+            <li><a href="/purpleair"><font color="#000">PurpleAir</font></a></li>
+          </ul>
+        </li>
+        <li class="nav-item li">
+          <a class="nav-link active" href="./about">Sobre nosotros <i class="fas fa-file-alt"></i></a>
+        </li>
+      
+        <li class="nav-item login active li">
+          <a class="nav-link active " href="/logout">Cerrar sesión <i class="fas fa-sign-in-alt"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{{/if}}
+
+{{#unless user}}
+  <nav class="navbar navbar-expand-lg navbar-light fixedNav mainheader">
+  <div class="container">
+    <div class="logo-salle">
+      <img src="/imgs/logo.png" class="img-logo" alt="La Salle">
+      <img src="/imgs/logo-eco1.png" class="img-logo" alt="Ecopetrol">
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto ul-nav ul">
+        <li class="nav-item li">
+          <a class="nav-link active " href="/">Aire Ciudadano <i class="fas fa-home"></i></a>
+        </li>
+        <li class="nav-item li">
+          <a class="nav-link active" href="./about">Sobre nosotros <i class="fas fa-file-alt"></i></a>
+        </li>
+        <li class="nav-item login active li">
+          <a class="nav-link active " href="/login">Iniciar sesión <i class="fas fa-sign-in-alt"></i></a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+{{/unless}}

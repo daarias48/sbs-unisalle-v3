@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card">
+      <div class="card-header login-card-header">
+        <div class="container-img-login">
+          <img src="/imgs/climauls-login.png" alt="Climauls">
+        </div>
+        <h3>Climauls</h3>
+      </div>
+      <div class="card-body">
+        <h1 style="text-align: center;">Iniciar sesión</h1>
+        <form action="/login" method="post">
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" name="email" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Contraseña" name="password" required>
+          </div>
+          <div class="form-group "><button type="submit" class="btn btn-primary d-block" style="margin: 0 auto;">Acceder</button></div>
+          <span>¿No tienes cuenta?<a href="/signup"> Regístrate aquí</a></span>
+          <br />
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<script>
+  function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+        console.log('User signed out.');
+        });
+    }
+</script>
+<script>
+  function onSignIn(googleUser) {
+    // var profile = googleUser.getBasicProfile();
+    // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    // console.log('Name: ' + profile.getName());
+    // console.log('Image URL: ' + profile.getImageUrl());
+    // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    var id_token = googleUser.getAuthResponse().id_token;
+    // console.log(id_token);
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/googleLogin');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = function () {
+      console.log('Signed in as: ' + xhr.responseText);
+      if (xhr.responseText == 'success') {
+        signOut();
+        location.assign('/info');
+      }
+    };
+    xhr.send(JSON.stringify({ token: id_token }));
+  }
+</script>

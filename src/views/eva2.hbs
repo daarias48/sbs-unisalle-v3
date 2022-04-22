@@ -1,0 +1,98 @@
+<div class="dash_title">
+    <h2 class="sensor-title"><b>Sensor Eva 2</b></h2>
+    <div>
+        <div>
+            Última medición:
+        </div>
+
+        <div id="date">-
+        </div>
+
+        <div id="hour">-</div>
+
+    </div>
+
+</div>
+
+<div class="Data_Download">
+    <div class="graph_and_data">
+        <div class="data">
+
+            <div class="data_data1">
+                <h6>PM<sub>2.5</sub></h6>
+                <h6 id="pm25_1">-</h6>
+            </div>
+            <div class="data_data1">
+                <h6>PM<sub>10</sub></h6>
+                <h6 id="pm10_1">-</h6>
+            </div>
+
+            <div class="data_data1">
+                <h6>Presión atmosférica</h6>
+                <h6 id="atmPressure">-</h6>
+            </div>
+
+            <div class="data_data1">
+                <h6>Temperatura</h6>
+                <h6 id="temp">-</h6>
+            </div>
+
+            <div class="data_data1">
+                <h6>Humedad Relativa</h6>
+                <h6 id="rh">-</h6>
+            </div>            
+        </div>
+
+        <div class="graph">
+            <div class="comBox-container">
+                <select name="measures" class="select-measures">
+                    <option selected>Escoja una opción</option>
+                    <option value="0">PM <sub>2.5</sub> </option>
+                    <option value="1">PM <sub>10</sub> </option>
+                    <option value="2">Presión atmosférica</option>
+                    <option value="3">Temperatura externa</option>
+                    <option value="4">RH externa</option>
+                </select>
+            </div>
+            <canvas id="myChartModulair" style="max-height:fit-content;"></canvas>
+        </div>
+    </div>
+
+    <div class="sensorsInfo">
+        <div class="sensorsInfo_Sensor">
+            <h6><b>Información del sensor</b></h6>
+
+            <div><b id="device">-</b></div>
+            <div class="sensors_data1">ID dispositivo</div>
+
+            <div><b id="description">-</b></div>
+            <div class="sensors_data1">Descripción</div>
+
+            <div><b id="maker">-</b></div>
+            <div class="sensors_data1">Fabricante</div>
+
+            <div><b id="deviceName">-</b></div>
+            <div class="sensors_data1">Modelo</div>
+
+            <div><b id="comunication">-</b></div>
+            <div class="sensors_data1">Comunicación</div>
+
+            <div><b id="storage">-</b></div>
+            <div class="sensors_data1">Fuente de Alimentación</div>
+        </div>
+
+        <div class="divForm" >
+            <h6><b>Reporte de mediciones</b></h6>
+            <form id="formExport" >
+                <h6>Seleccione la fecha inicial desde donde quiere descargar los datos</h6>
+                <input type="date" name="date1" id="date1" required>
+                <input type="submit" id="btnExport" value="Exportar datos" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js" integrity="sha512-ZfFfcp0ll1jVjeG5e7uPH1hwUyeoBUVAb3xRJpqBsH90jVegaYKv5nGOhGnUYxZg/kbYpl6EWVGvmWrbV32L9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script type="module" src="/js/eva2.js"></script>

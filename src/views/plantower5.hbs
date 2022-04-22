@@ -1,0 +1,180 @@
+<h1 class="sensor-title"><b>Sensor Plantower5</b></h1>
+<p class="p-dates"></p>
+<div class="graph-sensors">
+    <div class="mySensors">
+        <div class="a-sensors">
+            <a href="/airlink">Airlink</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/modulair-pm">Modulair1</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/modulair-pm2">Modulair2</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/nuboair">Nuboair</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/clarity">Clarity1</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/clarity2">Clarity2</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/eva">Eva1</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/eva2">Eva2</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/purpleair">PurpleAir</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/plantower">Plantower1</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/plantower2">Plantower2</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/plantower3">Plantower3</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/plantower4">Plantower4</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/plantower5">Plantower5</a>
+        </div>
+
+        {{!-- <div class="a-sensors">
+            <a href="/plantower">Plantower</a>
+        </div>
+        <div class="a-sensors">
+            <a href="/mhz">MHZ19C</a>
+        </div> --}}
+    </div>
+    <div class="graph">
+        <div class="comBox-container">
+            <select name="measures" class="select-measures">
+                <option value="0">PM2.5</option>
+                <option value="1">PM1</option>
+                <option value="2">PM10</option>
+                <option value="3">Temperatura externa</option>
+                <option value="4">RH externa</option>
+            </select>
+        </div>
+        <canvas id="myChartModulair"></canvas>
+        <p class="p-hour">Hora HH:mm</p>
+    </div>
+</div>
+<div class="sensor-container">
+    <section class="sensorData">
+        <h2 class="titulo">Datos en tiempo real</h2>
+        <h3 id="subtitle"></h3>
+        <div class="container-table">
+            <table class="table">
+                <thead class="theadModul">
+                    <tr>
+                        <th scope="col">Medida</th>
+                        <th scope="col">Valores</th>
+                    </tr>
+                </thead>
+                <tbody class=" table" style="color: #fff;">
+                    <tr class="table-active">
+                        <th scope="row">Temperatura externa</th>
+                        <td id="temp">
+
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <th scope="row">Humedad relativa (RH) externa</th>
+                        <td id="rh">
+
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <th scope="row">PM1</th>
+                        <td id="pm1">
+
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <th scope="row">PM10</th>
+                        <td id="pm10">
+
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <th scope="row">PM2.5</th>
+                        <td id="pm25">
+
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <th scope="row">Fecha de muestreo</th>
+                        <td id="date">
+
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <th scope="row">Hora de muestreo</th>
+                        <td id="hour">
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="sectionInfo">
+        <h2 class="titulo">Información del sensor</h2>
+        <div class="container-table">
+            <table class="table">
+                <thead class="theadModul">
+                    <tr>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Información</th>
+                    </tr>
+                </thead>
+                <tbody class=" table" style="color: #fff;">
+                    <tr class="table-active">
+                        <th scope="row">Modelo</th>
+                        <td id="deviceName">
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <th scope="row">ID dispositivo</th>
+                        <td id="device">
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <th scope="row">Fuente de alimentación</th>
+                        <td id="storage">
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <th scope="row">Comunicación</th>
+                        <td id="comunication">
+
+                        </td>
+                    </tr>
+                    <tr class="table-active">
+                        <th scope="row">Fabricante</th>
+                        <td id="maker">
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+<div class="divForm" >
+    <form id="formExport" >
+        <label><b>Seleccione la fecha inicial desde donde quiere descargar los datos:</b></label></br>
+        <input type="date" name="date1" id="date1" required>
+        <input type="submit" id="btnExport" value="Exportar datos" />
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js" integrity="sha512-ZfFfcp0ll1jVjeG5e7uPH1hwUyeoBUVAb3xRJpqBsH90jVegaYKv5nGOhGnUYxZg/kbYpl6EWVGvmWrbV32L9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script type="module" src="/js/plantower5.js"></script>
