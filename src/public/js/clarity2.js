@@ -21,7 +21,7 @@ const selectClarity = document.querySelector('.select-measures')
 
 const temp = document.getElementById('temperatureClarity');
 const rh = document.getElementById('rhClarity');
-const no2 = document.getElementById('no2Clarity');
+//const no2 = document.getElementById('no2Clarity');
 const pm1mass = document.getElementById('pm1massClarity');
 const pm10mass = document.getElementById('pm10massClarity');
 const pm25mass = document.getElementById('pm25massClarity');
@@ -41,7 +41,7 @@ onChildAdded(commentsRef, (data) => {
     clarity = data.val()
     temp.innerHTML = `${clarity.temperature} °C`
     rh.innerHTML = `${clarity.rh} %`
-    no2.innerHTML = `${clarity.NO2} ppb`
+    //no2.innerHTML = `${clarity.NO2} ppb`
     pm1mass.innerHTML = `${clarity.pm1Mass} µg/m<sup>3</sup>`
     pm10mass.innerHTML = `${clarity.pm10Mass} µg/m<sup>3</sup>`
     pm25mass.innerHTML = `${clarity.pm2_5Mass} µg/m<sup>3</sup>`

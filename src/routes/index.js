@@ -33,14 +33,19 @@ router.get('/index', checkAuthenticated, (req, res) => {
             if(user) {
                 res.render('index', {user})
             }else {
+                /*
                 req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
                 res.redirect('/login')
+                */
+                res.render('index', {user})
             }
         }) 
     }else {
         res.render('index', {user})
     }
 })
+
+
 router.get('/modulair-pm', checkAuthenticated, (req, res) => {
     let user = req.user
     if(!user) {
@@ -48,14 +53,17 @@ router.get('/modulair-pm', checkAuthenticated, (req, res) => {
             if(user) {
                 res.render('modulair-pm-info', {user})
             }else {
+                /*
                 req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
-                res.redirect('/login')
+                res.redirect('/login')*/
+                res.render('modulair-pm-info', {user})
             }
         }) 
     }else {
         res.render('modulair-pm-info', {user})
     }
 })
+
 
 router.get('/modulair-pm2', checkAuthenticated, (req, res) => {
     let user = req.user
@@ -64,14 +72,16 @@ router.get('/modulair-pm2', checkAuthenticated, (req, res) => {
             if(user) {
                 res.render('modulairpm2', {user})
             }else {
-                req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
-                res.redirect('/login')
+               /* req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
+                res.redirect('/login')*/
+                res.render('modulairpm2', {user})
             }
         }) 
     }else {
         res.render('modulairpm2', {user})
     }
 })
+
 
 router.get('/clarity', checkAuthenticated, (req, res) => {
     let user = req.user
@@ -80,8 +90,9 @@ router.get('/clarity', checkAuthenticated, (req, res) => {
             if(user) {
                 res.render('clarity-info', {user})
             }else {
-                req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
-                res.redirect('/login')
+                /*req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
+                res.redirect('/login')*/
+                res.render('clarity-info', {user})
             }
         }) 
     }else {
@@ -89,6 +100,7 @@ router.get('/clarity', checkAuthenticated, (req, res) => {
     }
 }
 )
+
 router.get('/clarity2', checkAuthenticated, (req, res) => {
     let user = req.user
     if(!user) {
@@ -96,8 +108,9 @@ router.get('/clarity2', checkAuthenticated, (req, res) => {
             if(user) {
                 res.render('clarity2', {user})
             }else {
-                req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
-                res.redirect('/login')
+                /*req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
+                res.redirect('/clarity2')*/
+                res.render('clarity2', {user})
             }
         }) 
     }else {
@@ -218,8 +231,10 @@ router.get('/mhz', checkAuthenticated, (req, res) => {
             if(user) {
                 res.render('mhz', {user})
             }else {
+                /*
                 req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
-                res.redirect('/login')
+                res.redirect('/login')*/
+                res.render('mhz', {user})
             }
         }) 
     }else {
@@ -249,8 +264,9 @@ router.get('/nuboair', checkAuthenticated, (req, res) => {
             if(user) {
                 res.render('nuboair', {user})
             }else {
-                req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
-                res.redirect('/login')
+                /*req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')*/
+               /* res.redirect('/nuboair')*/
+               res.render('nuboair', {user})
             }
         }) 
     }else {
@@ -265,8 +281,9 @@ router.get('/eva', checkAuthenticated, (req, res) => {
             if(user) {
                 res.render('eva', {user})
             }else {
-                req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
-                res.redirect('/login')
+                /*req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')*/
+               /* res.redirect('/eva')*/
+                res.render('eva', {user})
             }
         }) 
     }else {
@@ -281,8 +298,9 @@ router.get('/eva2', checkAuthenticated, (req, res) => {
             if(user) {
                 res.render('eva2', {user})
             }else {
-                req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
-                res.redirect('/login')
+                /*req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')*/
+               /* res.redirect('/eva2')*/
+                res.render('eva2', {user})
             }
         }) 
     }else {
@@ -297,8 +315,9 @@ router.get('/airlink', checkAuthenticated, (req, res) => {
             if(user) {
                 res.render('airlink', {user})
             }else {
-                req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
-                res.redirect('/login')
+                /*req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
+                res.redirect('/login')*/
+                res.render('airlink', {user})
             }
         }) 
     }else {
@@ -313,8 +332,10 @@ router.get('/purpleair', checkAuthenticated, (req, res) => {
             if(user) {
                 res.render('purpleair', {user})
             }else {
+                /*
                 req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
-                res.redirect('/login')
+                res.redirect('/login')*/
+                res.render('purpleair', {user})
             }
         }) 
     }else {
@@ -417,6 +438,10 @@ router.post('/signup', async (req, res) => {
     }
 })
 
+
+
+
+
 router.get('/info', checkAuthenticated, (req, res) => {
     let user = req.user
     try {
@@ -428,8 +453,11 @@ router.get('/info', checkAuthenticated, (req, res) => {
                     user.name = doc.data().name
                     res.render('info-sensors', {user})
                 }else {
+                    /*
                     req.flash('errorsMsg', 'No está autorizado, por favor ingrese o regístrese')
                     res.redirect('/login')
+                    */
+                    res.render('info-sensors', {user})
                 }
             }) 
         }else {

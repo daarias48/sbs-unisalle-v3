@@ -21,8 +21,8 @@ initializeApp(firebaseConfig);
 const selectModulair = document.querySelector('.select-measures')
 
 const temp = document.getElementById('temp');
-const rh = document.getElementById('rh');
-const atmP = document.getElementById('atmPressure');
+//const rh = document.getElementById('rh');
+//const atmP = document.getElementById('atmPressure');
 const airQ = document.getElementById('airQuality');
 const pm10 = document.getElementById('pm10');
 const pm25 = document.getElementById('pm25');
@@ -42,12 +42,12 @@ const commentsRef = ref(dbRef, 'sensors/nuboair')
 onChildAdded(commentsRef, (data) => {
     nuboair = data.val()
     temp.innerHTML = `${nuboair.temperature} °C`
-    rh.innerHTML = `${nuboair.rh} %`
+    //rh.innerHTML = `${nuboair.rh} %`
     pm10.innerHTML = `${nuboair.pm10} µg/m<sup>3</sup>`
     pm25.innerHTML = `${nuboair.pm25} µg/m<sup>3</sup>`
     date.innerHTML = nuboair.date
     hour.innerHTML = nuboair.hour
-    atmP.innerHTML = `${nuboair.pressure} hPa`
+    //atmP.innerHTML = `${nuboair.pressure} hPa`
     dName.innerHTML = nuboair.model
     dId.innerHTML = nuboair.deviceId
     storage.innerHTML = nuboair.storage
