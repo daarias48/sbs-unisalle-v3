@@ -21,10 +21,10 @@ initializeApp(firebaseConfig);
 const selectModulair = document.querySelector('.select-measures')
 
 const temp = document.getElementById('temp');
-const rh = document.getElementById('rh');
+//const rh = document.getElementById('rh');
 const pm10_1 = document.getElementById('pm10_1');
 const pm25_1 = document.getElementById('pm25_1');
-const atmP = document.getElementById('atmPressure');
+//const atmP = document.getElementById('atmPressure');
 const date = document.getElementById('date');
 const hour = document.getElementById('hour');
 
@@ -43,11 +43,11 @@ const commentsRef = ref(dbRef, 'sensors/eva')
 onChildAdded(commentsRef, (data) => {
     eva = data.val()
     temp.innerHTML = `${eva.temperature} °C`
-    rh.innerHTML = `${eva.rh} %`
-    atmP.innerHTML = `${eva.pressure} hPa`
+    //rh.innerHTML = `${eva.rh} %`
+    //atmP.innerHTML = `${eva.pressure} hPa`
     pm10_1.innerHTML = `${eva.pm10_1} µg/m<sup>3</sup>`
     pm25_1.innerHTML = `${eva.pm25_1} µg/m<sup>3</sup>`
-    date.innerHTML = eva.date
+    date.innerHTML = `${eva.date},`
     hour.innerHTML = eva.hour
     device.innerHTML = eva.device
     deviceName.innerHTML = eva.model

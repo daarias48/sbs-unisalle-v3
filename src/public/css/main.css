@@ -1189,6 +1189,22 @@ ul{
     opacity: 0.8;
 }
 
+.selectEVA{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0px 0px 0px 0px;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.selectEVA div{
+    justify-content: stretch;
+    text-align: left;
+    padding: 5px;
+    float: left;
+    opacity: 0.8;
+}
+
 .Data_Download{
     width: 100%;
     height: auto;

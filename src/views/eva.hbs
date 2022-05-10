@@ -2,7 +2,7 @@
     <input type="checkbox" id="btn-mas">
     <div class="marcas-sensores">
         <a href="/airlink">Airlink</a>
-        <a href="/clarity">Clarity</a>
+        <a href="/clarity2">Clarity</a>
         <a href="">CalidAir</a>
         <a href="/eva2">EVA</a>
         <a href="/modulair-pm">ModulAir</a>
@@ -27,7 +27,28 @@
         <br>
         <br>
         Si quieres ver las otras marcas disponibles, haz clic en el botón +.
+
+        <div class="selectEVA">
+    <div>
+    Seleccione el sensor EVA: 
     </div>
+
+ 
+    <a href="/eva">
+        <input type="button" value="EVA 1" style="background: #0C1847;color:white; border:none;">
+    </a>
+
+
+
+    <a href="/eva2">
+        <input type="button" value="EVA 2" style="background: #0C1847;color:white;border:none;">
+    </a>
+
+</div>
+        
+    </div>
+
+    
 
 </div>
 <div class="dash_title">
@@ -59,20 +80,18 @@
                 <h6 id="pm10_1">-</h6>
             </div>
 
-            <div class="data_data1">
-                <h6>Presión atmosférica</h6>
-                <h6 id="atmPressure">-</h6>
-            </div>
+
 
             <div class="data_data1">
-                <h6>Temperatura</h6>
+                <h6>Temperatura ambiente</h6>
                 <h6 id="temp">-</h6>
             </div>
-
+<!--
             <div class="data_data1">
                 <h6>Humedad Relativa</h6>
                 <h6 id="rh">-</h6>
-            </div>            
+            </div>     
+            -->         
         </div>
 
         <div class="graph">
@@ -82,7 +101,7 @@
                     <option value="0">PM <sub>2.5</sub> </option>
                     <option value="1">PM <sub>10</sub> </option>
                     <option value="2">Presión atmosférica</option>
-                    <option value="3">Temperatura externa</option>
+                    <option value="3">Temperatura ambiente</option>
                     <option value="4">RH externa</option>
                 </select>
             </div>

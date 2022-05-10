@@ -23,7 +23,7 @@ const selectModulair = document.querySelector('.select-measures')
 const temp = document.getElementById('temp');
 //const rh = document.getElementById('rh');
 //const atmP = document.getElementById('atmPressure');
-const airQ = document.getElementById('airQuality');
+//const airQ = document.getElementById('airQuality');
 const pm10 = document.getElementById('pm10');
 const pm25 = document.getElementById('pm25');
 const date = document.getElementById('date');
@@ -45,7 +45,7 @@ onChildAdded(commentsRef, (data) => {
     //rh.innerHTML = `${nuboair.rh} %`
     pm10.innerHTML = `${nuboair.pm10} µg/m<sup>3</sup>`
     pm25.innerHTML = `${nuboair.pm25} µg/m<sup>3</sup>`
-    date.innerHTML = nuboair.date
+    date.innerHTML = `${nuboair.date}`
     hour.innerHTML = nuboair.hour
     //atmP.innerHTML = `${nuboair.pressure} hPa`
     dName.innerHTML = nuboair.model
@@ -53,7 +53,7 @@ onChildAdded(commentsRef, (data) => {
     storage.innerHTML = nuboair.storage
     comunication.innerHTML = nuboair.comunication
     maker.innerHTML = nuboair.maker
-    airQ.innerHTML = nuboair.airQuality
+    //airQ.innerHTML = nuboair.airQuality
 
 }, {
     onlyOn: true
