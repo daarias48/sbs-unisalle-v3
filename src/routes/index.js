@@ -132,6 +132,39 @@ router.get('/about', checkAuthenticated, (req, res) => {
         res.render('about', {user})
     }
 })
+router.get('/calidair1', (req, res) => {
+    res.render('calidair')
+})
+router.get('/calidair1', checkAuthenticated, (req, res) => {
+    let user = req.user
+    if(!user) {
+        onAuthStateChanged(auth, async user => {
+            if(user) {
+                res.render('calidair1', {user})
+            }else {
+                res.render('calidair1')
+            }
+        }) 
+    }else {
+        res.render('calidair1', {user})
+    }
+})
+
+router.get('/calidair2', (req, res) => {
+    res.render('calidair2')
+})
+
+router.get('/calidair3', (req, res) => {
+    res.render('calidair3')
+})
+
+router.get('/calidair4', (req, res) => {
+    res.render('calidair4')
+})
+
+router.get('/calidairgases', (req, res) => {
+    res.render('calidairgases')
+})
 
 router.get('/contact-clima', checkAuthenticated, (req, res) => {
     let user = req.user

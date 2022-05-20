@@ -21,42 +21,43 @@
     </div>
 </div>
 </div>
-<h2 style="margin: 0px 0px 0px 30px;"><b>Sensor EVA</b></h2>
+<h2 style="margin: 0px 0px 0px 30px;"><b>Sensor CalidAir PM</b></h2>
 <div class="sensor_explain">
     
-    <div class="imagen_sensor_eva">
-        <img src="../imgs/eva-lab.png">
+    <div class="imagen_sensor_modul">
+        <img src="../imgs/calidair.png">
     </div>
-    <div class="explain">El sensor EVA es fabricado en el territorio colombiano. 
-        Su forma representativa de panal de abejas es visualmente atractiva y además, 
-        distribuye sus sensores en cada uno de sus niveles. Cuenta con la capacidad de medir 
-        concentraciones de material particulado (PM) en diferentes fracciones (PM<sub>2.5</sub> y PM<sub>10</sub>) y
-         variables meteorológicas.
+    <div class="explain">El equipo CalidAirPM permite obtener mediciones de material particulado (PM) 
+        en diferentes fracciones (PM<sub>1</sub>, PM<sub>2.5</sub> y PM<sub>10</sub>) además de otorgar mediciones de variables meteorológicas. 
+        Por su valor pertenece a los sensores gama baja. 
+        Este equipo fue construido en el semillero AVARC de la Universidad de La Salle.
         <br>
         <br>
         Si quieres ver las otras marcas disponibles, haz clic en el botón +.
+
         <div class="selectEVA">
     <div>
-    Seleccione el sensor EVA: 
+    Seleccione el sensor: 
     </div>
 
- 
-<select onchange="window.location=this.options[this.selectedIndex].value">
+    <select onchange="window.location=this.options[this.selectedIndex].value">
         <option selected>Escoja una opción</option>
-        <option value="/eva">EVA 1</option>
-        <option value="/eva2">EVA 2</option>
+        <option value="/calidair1">CalidAir 1</option>
+        <option value="/eva2">CalidAir 2</option>
+        <option value="/calidair3">CalidAir 3*</option>
+        <option value="/calidair4">CalidAir 4*</option>
 
-
-    </select>  
-
-</div>
-    </div>
-
+    </select>
     
 
+    <div style="opacity: 0.8; font-size: 12px;">*Equipos ubicados en la ciudad de Bucaramanga.</div>
 </div>
+    </div>
+
+</div>
+<div style="margin: 0 auto; justify-content:center;">
 <div class="dash_title">
-    <h2 class="sensor-title"><b>Dashboard EVA 2</b></h2>
+    <h2 id="sensor-title"><b>Dashboard CalidAir 3</b></h2>
     <div>
         <div>
             Última medición:
@@ -67,39 +68,27 @@
 
         <div id="hour">-</div>
 
-        
-
     </div>
-        
+
 </div>
-
-
 
 <div class="Data_Download">
     <div class="graph_and_data">
         <div class="data">
-
+            <div class="data_data1">
+                <h6>PM<sub>1</sub></h6>
+                <h6 id="pm1">-</h6>
+            </div>
             <div class="data_data1">
                 <h6>PM<sub>2.5</sub></h6>
-                <h6 id="pm25_1">-</h6>
+                <h6 id="pm25">-</h6>
             </div>
             <div class="data_data1">
                 <h6>PM<sub>10</sub></h6>
-                <h6 id="pm10_1">-</h6>
+                <h6 id="pm10">-</h6>
             </div>
 
-
-
-            <div class="data_data1">
-                <h6>Temperatura ambiente</h6>
-                <h6 id="temp">-</h6>
-            </div>
-<!--
-            <div class="data_data1">
-                <h6>Humedad Relativa</h6>
-                <h6 id="rh">-</h6>
-            </div>     
-            -->       
+            
         </div>
 
         <div class="graph">
@@ -107,37 +96,33 @@
                 <select name="measures" class="select-measures">
                     <option selected>Escoja una opción</option>
                     <option value="0">PM <sub>2.5</sub> </option>
-                    <option value="1">PM <sub>10</sub> </option>
-                    <option value="2">Presión atmosférica</option>
+                    <option value="1">PM <sub>1</sub> </option>
+                    <option value="2">PM <sub>10</sub> </option>
                     <option value="3">Temperatura externa</option>
                     <option value="4">RH externa</option>
                 </select>
             </div>
             <canvas id="myChartModulair" style="max-height:fit-content;"></canvas>
-        </div>
+            </div>
     </div>
 
     <div class="sensorsInfo">
         <div class="sensorsInfo_Sensor">
             <h6><b>Información del sensor</b></h6>
+            
+            <div><b id="temp">CalidAir PM4BBD9E7CF0AC</b></div>
+            <div class="sensors_data1">Serial</div>
 
-            <div><b id="device">-</b></div>
-            <div class="sensors_data1">ID dispositivo</div>
-
-            <div><b id="description">-</b></div>
-            <div class="sensors_data1">Descripción</div>
-
-            <div><b id="maker">-</b></div>
+            <div><b id="rh">UniSalle</b></div>
             <div class="sensors_data1">Fabricante</div>
 
-            <div><b id="deviceName">-</b></div>
+            <div><b id="idModulair">CalidAir PM</b></div>
             <div class="sensors_data1">Modelo</div>
 
-            <div><b id="comunication">-</b></div>
+            <div><b id="maker">WiFi</b></div>
             <div class="sensors_data1">Comunicación</div>
 
-            <div><b id="storage">-</b></div>
-            <div class="sensors_data1">Fuente de Alimentación</div>
+          
         </div>
 
         <div class="divForm" >
@@ -150,8 +135,7 @@
         </div>
     </div>
 </div>
-
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js" integrity="sha512-ZfFfcp0ll1jVjeG5e7uPH1hwUyeoBUVAb3xRJpqBsH90jVegaYKv5nGOhGnUYxZg/kbYpl6EWVGvmWrbV32L9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
-<script type="module" src="/js/eva2.js"></script>
+<script type="module" src="/js/calidair3.js"></script>

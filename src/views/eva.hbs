@@ -1,17 +1,25 @@
 <div class="container-lat">
-    <input type="checkbox" id="btn-mas">
-    <div class="marcas-sensores">
-        <a href="/airlink">Airlink</a>
-        <a href="/clarity2">Clarity</a>
-        <a href="/eva2">EVA</a>
-        <a href="/modulair-pm">ModulAir</a>
-        <a href="/nuboair">NuboAir</a>
-        <a href="/purpleair">PurpleAir</a>
+<input type="checkbox" id="btn-mas">
+<div class="btn-mas">
+    <label for="btn-mas" style="font-family: 'Poppins', sans-serif; cursor:pointer;">+<br>E<br>Q<br>U<br>I<br>P<br>O<br>S</label>
+</div>
 
+
+<div class="container-menu-lat">
+    <div class="cont-menu">
+        <nav>
+            <a href="/airlink">Airlink</a>
+            <a href="/calidair1">CalidAir PM</a>
+            <a href="/calidairgases">CalidAir PM + Gases</a>
+            <a href="/clarity2">Clarity</a>
+            <a href="/eva2">EVA</a>
+            <a href="/modulair-pm">ModulAir</a>
+            <a href="/nuboair">NuboAir</a>
+            <a href="/purpleair">PurpleAir</a>
+        </nav>
+        <label for="btn-mas" class="fas fa-times"></label>
     </div>
-    <div class="btn-mas">
-        <label for="btn-mas" class="fas fa-plus"></label>
-    </div>
+</div>
 </div>
 <h2 style="margin: 0px 0px 0px 30px;"><b>Sensor EVA</b></h2>
 <div class="sensor_explain">
@@ -19,10 +27,11 @@
     <div class="imagen_sensor_eva">
         <img src="../imgs/eva-lab.png">
     </div>
-    <div class="explain">El sensor EVA es fabricado en el territorio colombiano.
-        Su forma representativa de panal es visualmente atractiva y además, distribuye
-        sus componentes en cada uno de sus niveles. Cuenta con la capacidad de medir concentraciones
-        de material particulado y variables metereológicas.
+    <div class="explain">El sensor EVA es fabricado en el territorio colombiano. 
+        Su forma representativa de panal de abejas es visualmente atractiva y además, 
+        distribuye sus sensores en cada uno de sus niveles. Cuenta con la capacidad de medir 
+        concentraciones de material particulado (PM) en diferentes fracciones (PM<sub>2.5</sub> y PM<sub>10</sub>) y
+         variables meteorológicas.
         <br>
         <br>
         Si quieres ver las otras marcas disponibles, haz clic en el botón +.
@@ -32,16 +41,12 @@
     Seleccione el sensor EVA: 
     </div>
 
- 
-    <a href="/eva">
-        <input type="button" value="EVA 1" style="background: #0C1847;color:white; border:none;">
-    </a>
+<select onchange="window.location=this.options[this.selectedIndex].value">
+        <option selected>Escoja una opción</option>
+        <option value="/eva">EVA 1</option>
+        <option value="/eva2">EVA 2</option>
 
-
-
-    <a href="/eva2">
-        <input type="button" value="EVA 2" style="background: #0C1847;color:white;border:none;">
-    </a>
+    </select>
 
 </div>
         
@@ -51,7 +56,7 @@
 
 </div>
 <div class="dash_title">
-    <h2 class="sensor-title"><b>Dashboard Eva 1</b></h2>
+    <h2 class="sensor-title"><b>Dashboard EVA 1</b></h2>
     <div>
         <div>
             Última medición:
