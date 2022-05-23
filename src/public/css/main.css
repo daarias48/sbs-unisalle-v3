@@ -977,10 +977,12 @@ ul{
 /*Menú lateral para sensores*/
 .container-lat{
     position: fixed;
+    z-index: 100;
 }
 
 #btn-mas{
     display: none;
+
 }
 .btn-mas{
     font-family: 'Poppins', sans-serif;
@@ -990,7 +992,7 @@ ul{
     border-radius: 5px;
     text-align: center;
     padding: 5px;
-
+    
 }
 
 
@@ -1006,7 +1008,7 @@ ul{
     visibility: hidden;
     /*opacity: 0;
     visibility: hidden;*/
- 
+    
 }
 
 #btn-mas:checked ~ .container-menu-lat{
@@ -1033,7 +1035,7 @@ ul{
 
 .cont-menu nav{
     transform: translateY(15%);
-
+    
 }
 
 .cont-menu nav a{
@@ -1044,6 +1046,7 @@ ul{
     font-size: 15px;
     border-left: 5px solid transparent;
     transition: all 500ms ease;
+    
 }
 
 .cont-menu nav a:hover{
@@ -1058,6 +1061,7 @@ ul{
     top: 10px;
     color: black;
     cursor: pointer;
+
 }
 
 /*
