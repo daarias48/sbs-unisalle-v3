@@ -68,7 +68,7 @@ const allRh = []
 const allPm1 = []
 const allPm10 = []
 const allPm25 = []
-const colorGraph =["#EAAA00","#1E8616","#56083E","#EE0000","#234783"]
+
 
 
 var myChart = new Chart(ctx, {
@@ -168,7 +168,7 @@ onValue(reference, (snap) => {
     const pm25 = allPm25.reverse().filter((el, i) => i < 20).reverse()
     datesReduced = allDates.reverse().filter((el, i) => i < 20).reverse()
     const dates = myDates(datesReduced) 
-    const dategraph = allDates.reverse().filter((el, i) => i < 20).reverse()
+
 
 
 

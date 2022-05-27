@@ -38,7 +38,7 @@ function initMap() {
   const pm25Counts = [0.0, 12.0, 37.0, 55.0, 150.0, 250.0, 500.0]
 
   const db = getDatabase()
-  const myRef = query(ref(db, 'sensors/modulairPm2'), limitToLast(1))
+  const myRef = query(ref(db, 'sensors/nuboair'), limitToLast(1))
   onValue(myRef, (data) => {
     data.forEach((doc) => {
       const modulair = doc.val()
@@ -64,7 +64,7 @@ function initMap() {
         '<h6 id="firstHeading" class="firstHeading"><font face="sans-serif">Datos en tiempo real</font></h6>' +
         '<div id="bodyContent">' +
         `<p style="display: inline-block; color: #000; padding: 2px 5px; background-color: ${color};"><font face="sans-serif">Índice de calidad de aire ICA: ${ica.toFixed(0)} </font> </p>` +
-        `<p><font face="sans-serif">PM<sub>1</sub>: ${modulair.pm1} µg/m<sup>3</sub> </font></p>` +
+        
         `<p><font face="sans-serif">PM<sub>10</sub>: ${modulair.pm10} µg/m<sup>3</sub> </font></p>` +
         `<p><font face="sans-serif">PM<sub>2.5</sub>: ${modulair.pm25} µg/m<sup>3</sub> </font></p>` +
         `<p><font face="sans-serif">Fecha: ${modulair.date} Hora: ${modulair.hour}</font></p>` +
