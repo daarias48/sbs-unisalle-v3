@@ -38,14 +38,14 @@ function initMap() {
   const pm25Counts = [0.0, 12.0, 37.0, 55.0, 150.0, 250.0, 500.0]
 
   const db = getDatabase()
-  const myRef = query(ref(db, 'sensors/nuboair'), limitToLast(1))
+  const myRef = query(ref(db, 'sensors/clarity2'), limitToLast(1))
   onValue(myRef, (data) => {
     data.forEach((doc) => {
       const modulair = doc.val()
       let ica
       for(let i = 0; i < icaCounts.length - 1; i++) {
-        if(modulair.pm25 >= pm25Counts[i] && modulair.pm25 < pm25Counts[i + 1]) {
-          ica = ((modulair.pm25 - pm25Counts[i]) * (icaCounts[i + 1] - icaCounts[i]) / (pm25Counts[i + 1] - pm25Counts[i])) + icaCounts[i]
+        if(modulair.pm2_5Mass >= pm25Counts[i] && modulair.pm2_5Mass < pm25Counts[i + 1]) {
+          ica = ((modulair.pm2_5Mass - pm25Counts[i]) * (icaCounts[i + 1] - icaCounts[i]) / (pm25Counts[i + 1] - pm25Counts[i])) + icaCounts[i]
         }
       }
       let color
@@ -65,8 +65,8 @@ function initMap() {
         '<div id="bodyContent">' +
         `<p style="display: inline-block; color: #000; padding: 2px 5px; background-color: ${color};"><font face="sans-serif">Índice de calidad de aire ICA: ${ica.toFixed(0)} </font> </p>` +
         
-        `<p><font face="sans-serif">PM<sub>10</sub>: ${modulair.pm10} µg/m<sup>3</sub> </font></p>` +
-        `<p><font face="sans-serif">PM<sub>2.5</sub>: ${modulair.pm25} µg/m<sup>3</sub> </font></p>` +
+        `<p><font face="sans-serif">PM<sub>10</sub>: ${modulair.pm10Mass} µg/m<sup>3</sub> </font></p>` +
+        `<p><font face="sans-serif">PM<sub>2.5</sub>: ${modulair.pm2_5Mass} µg/m<sup>3</sub> </font></p>` +
         `<p><font face="sans-serif">Fecha: ${modulair.date} Hora: ${modulair.hour}</font></p>` +
         "</div>" +
         "</div>";
