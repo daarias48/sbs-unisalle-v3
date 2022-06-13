@@ -143,6 +143,8 @@ class MySensor {
             console.log('Error:', error);
         }
     }
+
+    /*
     getDataPurpleair(){
         try {
             let headers ={
@@ -158,7 +160,7 @@ class MySensor {
             console.log('Error',error);
         }
     }
-
+*/
     getDataAirlink() {
         let t = Math.floor(Date.now() / 1000);
         let station_id = 124147;

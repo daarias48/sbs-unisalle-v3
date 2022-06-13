@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
 import { getDatabase, ref, onChildAdded, get, child, limitToLast, query, onValue } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-database.js";
 
+alert('Sensor temporalmente fuera de servicio.')
 var ctx = document.getElementById('myChartModulair').getContext('2d');
 
 const firebaseConfig = {
