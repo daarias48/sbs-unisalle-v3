@@ -1,6 +1,7 @@
 const fetch = require('node-fetch')
 const crypto = require('crypto')
 const { url } = require('inspector')
+const { response } = require('./app')
 
 class MySensor {
     constructor(api_key) {
@@ -144,23 +145,26 @@ class MySensor {
         }
     }
 
-    /*
-    getDataPurpleair(){
+    
+    getDataPurpleair(url){
         try {
             let headers ={
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                'X-API-Key': 'F116D22E-09DF-11ED-8561-42010A800005'
             }
-            return fetch(this.api_key,{
+            return fetch(url,{
                 methods:'GET',
                 headers:headers,
             })
-                .then((data) => data.json())
-                .then(resp => resp.results[0])
+            .then((res) => res.json())
+            .then((data) => data)
+            
+
         } catch (error) {
             console.log('Error',error);
         }
     }
-*/
+
     getDataAirlink() {
         let t = Math.floor(Date.now() / 1000);
         let station_id = 124147;

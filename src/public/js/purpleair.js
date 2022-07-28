@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
 import { getDatabase, ref, onChildAdded, get, child, limitToLast, query, onValue } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-database.js";
 
-alert('Sensor temporalmente fuera de servicio.')
 var ctx = document.getElementById('myChartModulair').getContext('2d');
 
 const firebaseConfig = {
@@ -47,7 +46,7 @@ onChildAdded(commentsRef, (data) => {
     pm1_1.innerHTML = `${purpleair.pm1} µg/m<sup>3</sup>`
     pm10_1.innerHTML = `${purpleair.pm10} µg/m<sup>3</sup>`
     pm25_1.innerHTML = `${purpleair.pm25} µg/m<sup>3</sup>`
-    date.innerHTML = `${purpleair.date}`
+    date.innerHTML = `${purpleair.date},`
     hour.innerHTML = purpleair.hour
     device.innerHTML = purpleair.device
     deviceName.innerHTML = purpleair.model
