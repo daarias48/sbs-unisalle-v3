@@ -8,7 +8,7 @@ const apis = require('./apis')
 
 const modulairObj = require('./ModulairPM')
 const clarityObj = require('./Clarity')
-const nuboairObj = require('./Nuboair')
+//const nuboairObj = require('./Nuboair')
 const evaObj = require('./Eva')
 const airlinkObj = require('./Airlink')
 const purpleairObj = require('./Purpleair');
@@ -16,7 +16,7 @@ const purpleairObj = require('./Purpleair');
 
 const modulairPMTest = new MySensor(apis.api_keyModulair)
 const claritySensor = new MySensor(apis.api_keyClarity)
-const nuboair = new MySensor(apis.api_keyNuboair)
+//const nuboair = new MySensor(apis.api_keyNuboair)
 const eva = new MySensor(apis.api_keyEva)
 const airlink = new MySensor(apis.api_keyAirlink)
 const purpleair = new MySensor(apis.urlDataPurpleair)
@@ -84,21 +84,24 @@ const pushingClarity = async () => {
     const dataClarity2 = await claritySensor.getDataClarity(apis.urlDataClarity2)
     const infoClarity2 = await claritySensor.getInfoClarity(apis.urlInfoClarity2)
 
-    const dataNuboair = await nuboair.getDataNubo(apis.urlDataNuboair)
-    const infoNuboair = await nuboair.getDataNubo(apis.urlInfoNuboair)
+    //const dataNuboair = await nuboair.getDataNubo(apis.urlDataNuboair)
+    //const infoNuboair = await nuboair.getDataNubo(apis.urlInfoNuboair)
 
-    const collectionNuboair = nuboairObj(dataNuboair, infoNuboair)
+    //const collectionNuboair = nuboairObj(dataNuboair, infoNuboair)
     //const collectionClarity = clarityObj(dataClarity, infoClarity)
     const collectionClarity2 = clarityObj(dataClarity2, infoClarity2)
-    
+    /*
     try {
-        db.ref('sensors/nuboair').orderByChild('id').equalTo(collectionNuboair.id).once('value', (snapshot) => {
+        
+       db.ref('sensors/nuboair').orderByChild('id').equalTo(collectionNuboair.id).once('value', (snapshot) => {
              if (!snapshot.exists()) db.ref('sensors/nuboair').push(collectionNuboair)
         })
-
+        */
+/*
     } catch (error) {
          console.log(error)
     }
+    */
     /*db.ref('sensors/clarity').orderByChild('id').equalTo(collectionClarity.id).once('value', (snapshot) => {*/
         /*if (!snapshot.exists()) db.ref('sensors/clarity').push(collectionClarity)*/
     /*})*/

@@ -76,7 +76,7 @@ class MySensor {
             console.log('Error', error);
         }
     }
-
+    /*
     getDataNubo(url) {
         try {
             let headers = {
@@ -110,7 +110,7 @@ class MySensor {
             console.log('Error:', error);
         }
     }
-
+*/
     getInfoEva(url) {
         try {
             let headers = {
